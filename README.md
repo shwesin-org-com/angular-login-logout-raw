@@ -1,6 +1,6 @@
-#My stydy nodes
+My stydy nodes
 ==============
-    - Components
+    -Create Components
           - welcome
           -
 
