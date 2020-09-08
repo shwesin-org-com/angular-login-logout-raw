@@ -1,15 +1,16 @@
-My stydy nodes
+My study nodes
 ==============
-    -In this angular knowledge:
+    -  Angular knowledge Should know:
           -properties binding, event binding and two-way binding
           -routing (edit in app-routing.module.ts)
             const routes: Routes = [
                 { path: 'login', component: LoginComponent },
                 { path: 'welcome', component: WelcomeComponent}
               ];
-    -Create Components
+    -  Create Components
           - welcome
-          -login
+          - login
+          - error
 
 
 
