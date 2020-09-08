@@ -1,5 +1,5 @@
-My study nodes
-==============
+My study nodes in angular 9
+============================
     -  Angular knowledge Should know:
           -properties binding, event binding and two-way binding
           -routing (edit in app-routing.module.ts)
@@ -7,14 +7,36 @@ My study nodes
                 { path: 'login', component: LoginComponent },
                 { path: 'welcome', component: WelcomeComponent}
               ];
-           -route from login to welcome pages
+              
+           - route from login to welcome pages
               1) constructor(private router: Router) { }
               2) this.router.navigate(['welcome']);
+              
+            - activate route in welcome
+               1)constructor(private route: ActivatedRoute) { }
+               2)ngOnInit() {
+                   this.name = this.route.snapshot.params.name;
+                  }
+             -ngFor 
+                1)todos = [
+                  {id: 1, description: 'Learn to Dance' },
+                  {id: 2, description: 'Learn to Angular'},
+                  {id: 3, description: 'Learn to Spring Boot'},
+                  {id: 4, description: 'Learn to React'}
+                   ];
+                 2) <tr *ngFor='let todo of todos'>
+                      <td>{{todo.id}}</td>
+                      <td>{{todo.description}}</td>
+                    </tr>
+                    
+            -link todos in welcome
+              1)<a routerLink='/todos'>Here</a>
               
     -  Create Components
           - welcome
           - login
           - error
+          - listTodos
 
 
 
