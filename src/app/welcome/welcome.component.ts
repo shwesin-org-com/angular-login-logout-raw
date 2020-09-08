@@ -7,10 +7,11 @@ import { AppComponent} from '../app.component';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  message = 'Some welcome message';
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.message);
   }
 
 }
