@@ -3,6 +3,7 @@ My study nodes in angular 9
     -  Angular knowledge Should know:
     ===================================
     ===================================
+    
           -properties binding, event binding and two-way binding
           =======================================================
             <small *ngIf = 'invalidLogin'>{{errorMessage}}</small>
@@ -12,6 +13,7 @@ My study nodes in angular 9
                 Username:{{username}}
                 <button (click)=handleLogin()>Login</button>
             </div>
+            
           -routing (edit in app-routing.module.ts)
           ========================================
             const routes: Routes = [
@@ -32,6 +34,7 @@ My study nodes in angular 9
                2)ngOnInit() {
                    this.name = this.route.snapshot.params.name;
                   }
+                  
              -ngFor
              =========
              
@@ -47,6 +50,8 @@ My study nodes in angular 9
                     </tr>
                     
             -link todos in welcome
+            ========================
+            
               1)<a routerLink='/todos'>Here</a>
               
             -create class in  todo 
@@ -65,6 +70,7 @@ My study nodes in angular 9
                       <td>{{todo.id}}</td>
                       <td>{{todo.description}}</td>
                     </tr>
+                    
              - Pipe
              ======
              
@@ -74,6 +80,7 @@ My study nodes in angular 9
                 <td>{{todo.targetDate | date}}</td>
                <td>{{todo.done}}</td>
               </tr>
+              
               
     -  Create Components
     ======================
