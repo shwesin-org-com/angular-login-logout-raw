@@ -1,5 +1,8 @@
 My stydy nodes
 ==============
+    -In this angular knowledge:
+          -properties binding, event binding and two-way binding
+          -routing (edit in app-routing.module.ts)
     -Create Components
           - welcome
           -login
