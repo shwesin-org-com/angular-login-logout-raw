@@ -3,6 +3,10 @@ My stydy nodes
     -In this angular knowledge:
           -properties binding, event binding and two-way binding
           -routing (edit in app-routing.module.ts)
+            const routes: Routes = [
+                { path: 'login', component: LoginComponent },
+                { path: 'welcome', component: WelcomeComponent}
+              ];
     -Create Components
           - welcome
           -login
