@@ -84,6 +84,9 @@ My study nodes in angular 9
             - Add bootstrap 4 in angular
             =============================
                 In style.css,added as:
+                 -link search in chrome as 
+                  unpkg font awesome 5
+                  unpkg bootstrap
                 
                 @import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css)
 
