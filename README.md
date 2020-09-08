@@ -1,23 +1,33 @@
 My study nodes in angular 9
 ============================
     -  Angular knowledge Should know:
+    ===================================
+    ===================================
           -properties binding, event binding and two-way binding
+          =======================================================
           -routing (edit in app-routing.module.ts)
+          ========================================
             const routes: Routes = [
                 { path: 'login', component: LoginComponent },
                 { path: 'welcome', component: WelcomeComponent}
               ];
               
            - route from login to welcome pages
+           =====================================
+           
               1) constructor(private router: Router) { }
               2) this.router.navigate(['welcome']);
               
             - activate route in welcome
+            ================================
+            
                1)constructor(private route: ActivatedRoute) { }
                2)ngOnInit() {
                    this.name = this.route.snapshot.params.name;
                   }
-             -ngFor 
+             -ngFor
+             =========
+             
                 1)todos = [
                   {id: 1, description: 'Learn to Dance' },
                   {id: 2, description: 'Learn to Angular'},
@@ -32,7 +42,35 @@ My study nodes in angular 9
             -link todos in welcome
               1)<a routerLink='/todos'>Here</a>
               
+            -create class in  todo 
+            ========================
+            
+              1)write in (.ts) file above @Component
+                export class Todo {
+                  constructor(
+                      public id: number,
+                      public description: string,
+                      public done: boolean,
+                      public targetDate: Date
+                     ) {}
+                  }
+               2)<tr *ngFor='let todo of todos'>
+                      <td>{{todo.id}}</td>
+                      <td>{{todo.description}}</td>
+                    </tr>
+             - Pipe
+             ======
+             
+              <tr *ngFor='let todo of todos'>
+                <td>{{todo.id}}</td>
+                <td>{{todo.description}}</td>
+                <td>{{todo.targetDate | date}}</td>
+               <td>{{todo.done}}</td>
+              </tr>
+              
     -  Create Components
+    ======================
+    =====================
           - welcome
           - login
           - error
