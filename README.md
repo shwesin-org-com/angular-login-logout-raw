@@ -7,6 +7,10 @@ My study nodes
                 { path: 'login', component: LoginComponent },
                 { path: 'welcome', component: WelcomeComponent}
               ];
+           -route from login to welcome pages
+              1) constructor(private router: Router) { }
+              2) this.router.navigate(['welcome']);
+              
     -  Create Components
           - welcome
           - login
