@@ -97,6 +97,8 @@ My study nodes in angular 9
           - login
           - error
           - listTodos
+          -menu
+          -footer
 
 
 
