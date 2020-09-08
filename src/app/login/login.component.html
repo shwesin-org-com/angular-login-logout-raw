@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Login Form</h1><br />
     <hr><br />
-    <p *ngIf='invalidLogin' class="text-danger text-center">{{errorMessage}}</p>
+    <p *ngIf='invalidLogin' class="alert alert-danger text-center">{{errorMessage}}</p>
     <div class="row">
         <div class="col-sm-3">Username:</div>
         <div class="col-sm-9"><input class="form-control" type="text" name="username" [(ngModel)]="username"></div>
