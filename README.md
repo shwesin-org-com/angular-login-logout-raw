@@ -80,6 +80,14 @@ My study nodes in angular 9
                 <td>{{todo.targetDate | date}}</td>
                <td>{{todo.done}}</td>
               </tr>
+            
+            - Add bootstrap 4 in angular
+            =============================
+                In style.css,added as:
+                
+                @import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css)
+
+            
               
               
     -  Create Components
