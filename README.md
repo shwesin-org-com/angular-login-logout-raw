@@ -17,11 +17,26 @@ My study nodes in angular 9
                2)ngOnInit() {
                    this.name = this.route.snapshot.params.name;
                   }
+             -ngFor 
+                1)todos = [
+                  {id: 1, description: 'Learn to Dance' },
+                  {id: 2, description: 'Learn to Angular'},
+                  {id: 3, description: 'Learn to Spring Boot'},
+                  {id: 4, description: 'Learn to React'}
+                   ];
+                 2) <tr *ngFor='let todo of todos'>
+                      <td>{{todo.id}}</td>
+                      <td>{{todo.description}}</td>
+                    </tr>
+                    
+            -link todos in welcome
+              1)<a routerLink='/todos'>Here</a>
               
     -  Create Components
           - welcome
           - login
           - error
+          - listTodos
 
 
 
