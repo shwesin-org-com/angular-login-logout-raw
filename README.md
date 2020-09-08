@@ -5,6 +5,13 @@ My study nodes in angular 9
     ===================================
           -properties binding, event binding and two-way binding
           =======================================================
+            <small *ngIf = 'invalidLogin'>{{errorMessage}}</small>
+            <div>
+                Username: <input type="text" name="username" [(ngModel)]="username">
+                Password: <input type="password" name="password" [(ngModel)]="password">
+                Username:{{username}}
+                <button (click)=handleLogin()>Login</button>
+            </div>
           -routing (edit in app-routing.module.ts)
           ========================================
             const routes: Routes = [
