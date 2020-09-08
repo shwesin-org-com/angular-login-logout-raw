@@ -7,10 +7,12 @@ My study nodes in angular 9
                 { path: 'login', component: LoginComponent },
                 { path: 'welcome', component: WelcomeComponent}
               ];
+              
            - route from login to welcome pages
               1) constructor(private router: Router) { }
               2) this.router.navigate(['welcome']);
-            - activate route
+              
+            - activate route in welcome
                1)constructor(private route: ActivatedRoute) { }
                2)ngOnInit() {
                    this.name = this.route.snapshot.params.name;
