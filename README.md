@@ -90,6 +90,8 @@ My study nodes in angular 9
                 @import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css)
                 
              - Service Creation
+             =====================
+             
                1)In service file write as ---->
                
                   constructor() { }
@@ -125,6 +127,64 @@ My study nodes in angular 9
                     this.invalidLogin = true;
                   }
                 }
+                
+            - Session Storage
+            ================
+              Check in chrome, Inspect->Application->Session Storage:
+              
+              1)sessionStorage.setItem('authenticaterUser', username);
+              
+              -------------------------------------------------------
+              
+              If you want log in user right or not:
+              
+                  authenticate(username, password) {
+                    console.log('before' + this.isUserLoggedIn());
+                    if (username === 'shwesin' && password === 'shwesin') {
+                      sessionStorage.setItem('authenticaterUser', username);
+                      console.log('after' + this.isUserLoggedIn());
+                      return true;
+                    } else {
+                      return false;
+                    }
+                }
+                isUserLoggedIn() {
+                  let user = sessionStorage.getItem('authenticaterUser');
+                  return !(user === null);
+                }
+              
+            - Enable menu link based on user authentication token
+              1)constructor(public hardcodedAuthenticationService:
+                      HardcodedAuthenticationService) { }
+                      
+              2)<ul class="navbar-nav">
+                    <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/welcome/shwesin" class="nav-link">Home</a></li>
+                    <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/todos" class="nav-link">Todos</a></li>
+                </ul>
+                <ul class="navbar-nav navbar-collapse justify-content-end">
+                    <li><a *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+                    <li><a *ngIf="hardcodedAuthenticationService.isUserLoggedIn()" routerLink="/logout" class="nav-link">Logout</a></li>
+                </ul>
+                
+                3)In chrome Inspect->Application->Session Storage->Clear  --- can test
+                
+            - Implement logout to remove user authentication token
+            
+              1) In hardcodedAuthenticationService,
+                  logout() {
+                    sessionStorage.removeItem ('authenticaterUser');
+                  }
+                  
+              2) In logout.component.ts
+                  constructor(
+                    public hardcodedAuthenticationService: HardcodedAuthenticationService) { }
+
+                  ngOnInit() {
+                    this.hardcodedAuthenticationService.logout();
+                  }
+
+              3) In UI, click logout, occur login
+              
 
             
               
@@ -136,8 +196,9 @@ My study nodes in angular 9
           - login
           - error
           - listTodos
-          -menu
-          -footer
+          - menu
+          - footer
+          - logout
           
      - Create Service
           -hardcodedAuthentication
