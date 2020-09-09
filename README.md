@@ -154,6 +154,8 @@ My study nodes in angular 9
                 }
               
             - Enable menu link based on user authentication token
+            =======================================================
+            
               1)constructor(public hardcodedAuthenticationService:
                       HardcodedAuthenticationService) { }
                       
@@ -169,6 +171,8 @@ My study nodes in angular 9
                 3)In chrome Inspect->Application->Session Storage->Clear  --- can test
                 
             - Implement logout to remove user authentication token
+            ==========================================================
+            
             
               1) In hardcodedAuthenticationService,
                   logout() {
@@ -185,13 +189,51 @@ My study nodes in angular 9
 
               3) In UI, click logout, occur login
               
+              
+           - Secure component using routeGuard
+           =========================================
+            -without login , you can not go other link , making as follows:
+            
+              1) In route-guard.service.ts
+                  export class RouteGuardService implements CanActivate {
+                      constructor(private hardcodedAuthenticationService: HardcodedAuthenticationService,
+                                  private router: Router) { }
+                      canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+                        if (this.hardcodedAuthenticationService.isUserLoggedIn()) {
+                          return true;
+                          this.router.navigate(['login']);
+                        } else {
+                          return false;
+                        }
+                      }
+                  }
+
+                  
+              2) In app-routing.module.ts
+              const routes: Routes = [
+                  { path: '', component: LoginComponent },
+                  { path: 'login', component: LoginComponent },
+                  { path: 'welcome/:name', component: WelcomeComponent, canActivate: [RouteGuardService]},
+                  { path: 'todos', component: ListTodosComponent, canActivate: [RouteGuardService]},
+                  { path: 'logout', component: LogoutComponent, canActivate: [RouteGuardService]},
+                  { path: '**', component: ErrorComponent}
+              ];
+
+              
+              
+           
+              
 
             
               
               
-    -  Create Components
-    ======================
-    =====================
+    -  Create Components and Services
+    ==================================
+    ==================================
+    
+      - Create components
+      ====================
+      
           - welcome
           - login
           - error
@@ -201,7 +243,10 @@ My study nodes in angular 9
           - logout
           
      - Create Service
+     =================
+     
           -hardcodedAuthentication
+          -routeGuard
 
 
 
