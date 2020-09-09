@@ -1,3 +1,14 @@
+Code install in your local
+============================
+    1)git clone myrepository
+    
+    2)npm install
+    
+    3)ng serve
+    
+    4)localhost:4200 type in your browser, will open angular ui
+
+
 My study nodes in angular 9
 ============================
     -  Angular knowledge Should know:
